@@ -1,18 +1,59 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; 
+    color: #333; 
     margin: 0;
     padding: 20px;
-    text-align: center;
+    text-align: center; 
+}
+
+h1 {
+    color: #2c3e50; 
+    margin-bottom: 20px; 
+}
+
+section {
+    margin: 20px 0; 
+    padding: 10px 0; 
+    background-color: #ecf0f1; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    width: 80%; 
+    max-width: 500px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+form {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
 input, button {
-    padding: 10px;
-    margin-top: 10px;
+    padding: 12px 20px; 
+    margin-top: 10px; 
+    width: 80%; 
+    border: 1px solid #bdc3c7; 
+    border-radius: 4px; 
+    font-size: 16px; 
+}
+
+
+button {
+    background-color: #3498db; 
+    color: white; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+button:hover {
+    background-color: #2980b9; 
 }
 
 #dicas, #tentativasRestantes, #mensagemFinal {
-    margin-top: 20px;
-    font-size: 20px;
-    color: #333;
+    font-size: 18px;
+    color: #e74c3c;
 }
+

@@ -17,24 +17,43 @@ function palpite(){
     const input = document.getElementById("input");
     palp = parseInt(input.value);
     //console.log(input.value);
-    buscaBinaria(palp);
+    validaPalpite();
+    buscaBinaria();
 }
 
-function buscaBinaria(value){
+function validaPalpite(){
+    if(palp == NSecreto){
+        alert(`Voce acertou, o número secreto é ${NSecreto}`)
+        location.href = "index.html"
+    } else if(palp > NSecreto){
+        alert("O número é maior que o número secreto.")
+    } else{
+        alert("O número é menor que o número secreto")
+    }
+
+}
+
+function buscaBinaria(){
     tent--;
+    atualizaTent();
     let meio = Math.floor((ini + fim) /2);
-    let section = document.getElementById("mensagemFinal");
+    let section = document.getElementById("dicas");
     console.log(meio, NSecreto);
 
-    if(value === NSecreto){
-        section.innerHTML = "Parabéns! Você acertou o número secreto.  " + NSecreto;
+    if(meio === NSecreto){
+        section.innerHTML = `O número secreto é o ponto médio entre ${ini} e ${fim}`;
         return;
 
-    } else if(tent === 0){
-        section.innerHTML = "Acabaram suas tentativas. O número secreto era: " + NSecreto;
-        return;
-
-    } else if(NSecreto > meio){
-        
+    } else if(meio > NSecreto){
+        fim = meio -1 
+    } else {
+        ini = meio +1
     }
+    section.innerHTML = `O número está entre ${ini} e ${fim}`;
+    return
 }
+
+function atualizaTent() {
+    document.getElementById('tentativasRestantes').textContent = 'Tentativas restantes: ' + tent;
+}
+atualizaTent();
