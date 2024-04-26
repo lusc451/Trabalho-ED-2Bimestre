@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9; 
     color: #333; 
@@ -56,4 +56,71 @@ button:hover {
     font-size: 18px;
     color: #e74c3c;
 }
+ */
 
+
+/* Configurações básicas para o corpo do documento */
+
+/* Configurações básicas do corpo do documento */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #563d7c; /* Cor de fundo roxo escuro */
+    color: #FFF; /* Texto branco para contraste */
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Estilos para o cabeçalho principal */
+h1 {
+    color: #dcd0ff; /* Cor roxa clara para o título */
+    margin-bottom: 20px;
+}
+
+/* Estilos para as seções de conteúdo */
+section {
+    background-color: #6c5490; /* Cor de fundo roxo médio */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 80%; /* Largura padronizada para todas as seções */
+    max-width: 400px; /* Máximo de largura para padronização */
+}
+
+/* Estilização do formulário e alinhamento dos elementos */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para campos de entrada e botões */
+input, button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%; /* Largura total dentro do formulário */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Especificações para o botão, incluindo efeito de interação */
+button {
+    background-color: #885ead; /* Cor roxa mais clara para o botão */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Efeito hover para botão */
+button:hover {
+    background-color: #7d54a3; /* Cor roxa mais escura ao passar o mouse */
+}
+
+/* Estilos para mensagens de dicas e informações */
+#dicas, #tentativasRestantes, #mensagemFinal {
+    color: #f8f8f2; /* Cor de texto muito clara */
+    font-size: 18px; /* Tamanho de fonte padronizado para dicas e mensagens */
+}
