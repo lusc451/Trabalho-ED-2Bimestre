@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+input, button {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#dicas, #tentativasRestantes, #mensagemFinal {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
