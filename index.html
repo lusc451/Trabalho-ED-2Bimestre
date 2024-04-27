@@ -14,7 +14,6 @@
             <input type="number" id="maxRange" placeholder="Digite o limite superior" required>
             <button type="submit">Definir Intervalo</button>
         </form>
-        <!-- teste -->
 
         <div id="palpiteForm" style="display:none;">
             <label for="palpite">Seu palpite: </label>
@@ -33,6 +32,11 @@
         </div>
         <section id="mensagemFinal"></section>
     </div>
+    <div class="info-box" id="endGameBox" style="display: none;">
+        <section id="endGameMessage"></section>
+        <button onclick="resetGame()">Reiniciar Jogo</button>
+    </div>
+    
 
     <script src="script.js"></script>
 </body>

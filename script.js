@@ -39,30 +39,43 @@ function palpite(){
 // O restante do código JavaScript permanece o mesmo
 
 
-function validaPalpite(){
-    const feedback = document.getElementById("feedback");
-    if(palp == NSecreto){
-        document.getElementById('mensagemFinal').innerHTML = `Você acertou, o número secreto é ${NSecreto}! <button onclick="resetGame()">Reiniciar Jogo</button>`;
-        feedback.innerHTML = ""; // Limpa o feedback para não confundir após o jogo terminar
-        document.getElementById('palpiteForm').style.display = 'none'; // Esconde o formulário de palpite
-    } else if(palp > NSecreto){
-        feedback.textContent = "O número é maior que o número secreto."; // Exibe dica no HTML
+function validaPalpite() {
+    if (palp == NSecreto) {
+        endGame(true);  // Usuário ganhou o jogo
     } else {
-        feedback.textContent = "O número é menor que o número secreto"; // Exibe dica no HTML
+        // Verifica se é a última tentativa antes de perder
+        if (tent <= 1) {
+            endGame(false);  // Usuário perdeu o jogo por falta de tentativas
+        } else {
+            tent--;  // Decrementa o número de tentativas restantes apenas aqui
+            atualizaTent();  // Atualiza a visualização do número de tentativas
+            // Fornece dicas se o palpite é maior ou menor que o número secreto
+            const dica = palp > NSecreto ? "O número é maior que o número secreto." : "O número é menor que o número secreto";
+            document.getElementById('feedback').textContent = dica;
+        }
     }
 }
 
-
-// Restante do código JavaScript permanece inalterado
-
-
-function resetGame() {
-    location.href = "index.html"; // Reinicia a página
+function endGame(won) {
+    let message = won ? `Parabéns! Você descobriu o número ${NSecreto}` : `Fim de jogo! As tentativas acabaram. O número secreto era ${NSecreto}.`;
+    document.getElementById('endGameMessage').textContent = message;
+    document.getElementById('palpiteForm').style.display = 'none';
+    document.getElementById('rangeForm').style.display = 'none';
+    document.getElementById('dicas-box').style.display = 'none';
+    document.getElementById('feedback-box').style.display = 'none';
+    document.getElementById('tentativas-box').style.display = 'none';
+    document.getElementById('endGameBox').style.display = 'block'; // Mostra a caixa de fim de jogo
 }
 
+function atualizaTent() {
+    document.getElementById('tentativasRestantes').textContent = 'Tentativas restantes: ' + tent;
+}
+
+function resetGame() {
+    location.reload(); // Recarrega a página para reiniciar o jogo
+}
 
 function buscaBinaria(){
-    tent--;
     atualizaTent();
     let meio = Math.floor((ini + fim) /2);
     let section = document.getElementById("dicas");
