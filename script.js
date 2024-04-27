@@ -6,6 +6,14 @@ let tent = 10;
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('rangeForm').addEventListener('submit', defineIntervalo);
+
+    // Adiciona ouvinte para a tecla Enter no campo de palpite
+    document.getElementById('input').addEventListener('keypress', function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Evita que o form seja submetido
+            palpite(); // Chama a função de palpite diretamente
+        }
+    });
 });
 
 function defineIntervalo(event){
@@ -20,6 +28,7 @@ function defineIntervalo(event){
     document.getElementById('rangeForm').style.display = 'none';
     atualizaTent();
 }
+
 
 function palpite(){
     palp = parseInt(document.getElementById("input").value);
