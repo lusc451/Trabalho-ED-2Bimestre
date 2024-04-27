@@ -4,22 +4,31 @@ let palp = 0;
 let NSecreto = 0;
 let tent = 10;
 
-document.addEventListener("DOMContentLoaded", intervalo());
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('rangeForm').addEventListener('submit', defineIntervalo);
+});
 
-function intervalo(){
-    ini = parseInt(prompt("Digite o número inicial do intervalo"));
-    fim = parseInt(prompt("Digite o número final do intervalo"));
-
-    NSecreto = Math.floor(Math.random() * fim);
+function defineIntervalo(event){
+    event.preventDefault();
+    ini = parseInt(document.getElementById("minRange").value);
+    fim = parseInt(document.getElementById("maxRange").value);
+    NSecreto = Math.floor(Math.random() * (fim - ini + 1) + ini);
+    document.getElementById('gameTitle').textContent = `Adivinhe o número entre ${ini} e ${fim}`;
+    document.getElementById('input').min = ini;
+    document.getElementById('input').max = fim;
+    document.getElementById('palpiteForm').style.display = 'block';
+    document.getElementById('rangeForm').style.display = 'none';
+    atualizaTent();
 }
 
 function palpite(){
-    const input = document.getElementById("input");
-    palp = parseInt(input.value);
-    //console.log(input.value);
+    palp = parseInt(document.getElementById("input").value);
     validaPalpite();
     buscaBinaria();
 }
+
+// O restante do código JavaScript permanece o mesmo
+
 
 function validaPalpite(){
     if(palp == NSecreto){
