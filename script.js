@@ -31,16 +31,21 @@ function palpite(){
 
 
 function validaPalpite(){
+    const feedback = document.getElementById("feedback");
     if(palp == NSecreto){
         document.getElementById('mensagemFinal').innerHTML = `Você acertou, o número secreto é ${NSecreto}! <button onclick="resetGame()">Reiniciar Jogo</button>`;
-        document.getElementById('dicas').innerHTML = ""; // Limpa as dicas para não confundir após o jogo terminar
+        feedback.innerHTML = ""; // Limpa o feedback para não confundir após o jogo terminar
         document.getElementById('palpiteForm').style.display = 'none'; // Esconde o formulário de palpite
     } else if(palp > NSecreto){
-        alert("O número é maior que o número secreto.");
+        feedback.textContent = "O número é maior que o número secreto."; // Exibe dica no HTML
     } else {
-        alert("O número é menor que o número secreto");
+        feedback.textContent = "O número é menor que o número secreto"; // Exibe dica no HTML
     }
 }
+
+
+// Restante do código JavaScript permanece inalterado
+
 
 function resetGame() {
     location.href = "index.html"; // Reinicia a página

@@ -6,23 +6,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 id="gameTitle">Jogo de Adivinhação com Busca Binária</h1>
+    <div class="container">
+        <h1 id="gameTitle">Jogo de Adivinhação com Busca Binária</h1>
 
-    <form id="rangeForm">
-        <input type="number" id="minRange" placeholder="Digite o limite inferior" required>
-        <input type="number" id="maxRange" placeholder="Digite o limite superior" required>
-        <button type="submit">Definir Intervalo</button>
-    </form>
+        <form id="rangeForm">
+            <input type="number" id="minRange" placeholder="Digite o limite inferior" required>
+            <input type="number" id="maxRange" placeholder="Digite o limite superior" required>
+            <button type="submit">Definir Intervalo</button>
+        </form>
 
-    <div id="palpiteForm" style="display:none;">
-        <label for="palpite">Seu palpite: </label>
-        <input type="number" id="input" required>
-        <button onclick="palpite()">Enviar Palpite</button>
+        <div id="palpiteForm" style="display:none;">
+            <label for="palpite">Seu palpite: </label>
+            <input type="number" id="input" required>
+            <button onclick="palpite()">Enviar Palpite</button>
+        </div>
+
+        <section id="dicas"></section>
+        <section id="feedback"></section> <!-- Nova section para feedback do palpite -->
+        <section id="tentativasRestantes"></section>
+        <section id="mensagemFinal"></section>
     </div>
-
-    <section id="dicas"></section>
-    <section id="tentativasRestantes"></section>
-    <section id="mensagemFinal"></section>
 
     <script src="script.js"></script>
 </body>
