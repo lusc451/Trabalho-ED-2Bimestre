@@ -124,3 +124,23 @@ button:hover {
     color: #f8f8f2; /* Cor de texto muito clara */
     font-size: 18px; /* Tamanho de fonte padronizado para dicas e mensagens */
 }
+#mensagemFinal {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #2ecc71; /* Cor verde para indicar sucesso */
+}
+
+#mensagemFinal button {
+    padding: 10px 15px;
+    background-color: #3498db; /* Cor azul para o botão */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#mensagemFinal button:hover {
+    background-color: #2980b9;
+}

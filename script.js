@@ -23,15 +23,20 @@ function palpite(){
 
 function validaPalpite(){
     if(palp == NSecreto){
-        alert(`Voce acertou, o número secreto é ${NSecreto}`)
-        location.href = "index.html"
+        document.getElementById('mensagemFinal').innerHTML = `Você acertou, o número secreto é ${NSecreto}! <button onclick="resetGame()">Reiniciar Jogo</button>`;
+        document.getElementById('dicas').innerHTML = ""; // Limpa as dicas para não confundir após o jogo terminar
+        document.getElementById('palpiteForm').style.display = 'none'; // Esconde o formulário de palpite
     } else if(palp > NSecreto){
-        alert("O número é maior que o número secreto.")
-    } else{
-        alert("O número é menor que o número secreto")
+        alert("O número é maior que o número secreto.");
+    } else {
+        alert("O número é menor que o número secreto");
     }
-
 }
+
+function resetGame() {
+    location.href = "index.html"; // Reinicia a página
+}
+
 
 function buscaBinaria(){
     tent--;
