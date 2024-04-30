@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #9575cd; /* Um roxo mais claro para o fundo da página */
+    color: #FFF;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+}
+
+.container {
+    background-color: #673ab7; /* Um roxo mais vivo para a caixa */
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.info-box {
+    background-color: #7e57c2; /* Um roxo intermediário para as caixas de informação */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+input, button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #9c27b0; /* Um roxo ainda mais vivo para o botão */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #7b1fa2;
+}
+
+section {
+    color: #f3e5f5; /* Um roxo muito claro para texto */
+    margin-top: 10px;
+    font-size: 16px;
+}
